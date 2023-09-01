@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <link rel="shortcut icon" href="./Icon/三体.ico">
+    <link rel="stylesheet" type="text/css" href="./css/Login.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <script type="text/JavaScript">
+        function method() {
+            if (document.getElementById("1").value == "Login_Happy_Birthday" && document.getElementById("2").value == "password") {
+                window.location.assign('./Subpage/cake.html');
+                return true;
+            }
+            else {
+                window.alert("您使用的密码或用户名不正确！请输入正确的！");
+                //您使用的密码或用户名不正确！请输入正确的！
+                return false;
+            }
+        }
+        function me() {
+            window.alert("提示:账号“Login_Happy_Birthday”,密码“password”");
+        }
+
+        function show(){
+            var show_part = document.querySelector('.loading-inner');
+            show_part.style.display = 'block';
+        }
+
+        function hide(){
+            var show_part = document.querySelector('.loading-inner');
+            show_part.style.display = 'none';
+        }
+        
+        function load(){
+            show();
+            setTimeout(function(){
+                hide();
+                method();
+            },6000);
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="header">Login</div>
+            <div class="form-wrapper">
+                <input type="text" name="UserName" placeholder="UserName" class="input-item" id="1">
+                <input type="password" name="Password" placeholder="Password" class="input-item" id="2">
+
+                <div class="loading-inner">
+                    <div class="loading-cover"></div>
+                </div>
+
+                <div class="btn one" onclick="load();">Submit</div>
+
+                <div class="msg">
+                    不知道?
+                    <a onclick="me()"><button class="btn two">Click me!</button></a>
+                </div>
+                <div class="msg1">
+                    作者:吴昊阳
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
